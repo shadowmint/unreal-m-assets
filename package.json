@@ -1,0 +1,26 @@
+{
+  "name": "unreal-m-assets",
+  "version": "0.0.1",
+  "description": "Asset helpers",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadowmint/unreal-m-assets.git"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "src"
+  ],
+  "author": "douglas.linder@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shadowmint/unreal-m-assets/issues"
+  },
+  "homepage": "https://github.com/shadowmint/unreal-m-assets",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "dependencies": {
+  }
+}
