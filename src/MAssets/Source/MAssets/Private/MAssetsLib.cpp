@@ -5,6 +5,7 @@
 
 #include "Engine/AssetManager.h"
 #include "Engine/PrimaryAssetLabel.h"
+#include "Interfaces/IPluginManager.h"
 #include "Kismet/GameplayStatics.h"
 
 void UMAssetsLib::Trace(FString Message, bool Debug)
@@ -58,4 +59,15 @@ TArray<UObject*> UMAssetsLib::LoadAssets(FName AssetTypeName, FString FromPath, 
 
 	Trace(FString::Printf(TEXT("Fetched %s x %d assets"), *AssetTypeName.ToString(), Assets.Num()), Debug);
 	return Assets;
+}
+
+FString UMAssetsLib::GetPluginAssetPath(const FString PluginName)
+{
+	const auto PluginRef = IPluginManager::Get().FindPlugin(PluginName);
+	if (!PluginRef)
+	{
+		return "Invalid plugin or not loaded";
+	}
+
+	return PluginRef->GetMountedAssetPath();
 }

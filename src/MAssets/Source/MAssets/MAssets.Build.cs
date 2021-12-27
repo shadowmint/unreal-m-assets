@@ -38,6 +38,7 @@ public class MAssets : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"Projects", // Plugin manager for plugin paths
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

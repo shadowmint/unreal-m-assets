@@ -22,4 +22,11 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "MAssets|Methods")
 	static TArray<UObject*> LoadAssets(FName AssetTypeName, FString FromPath, UClass* AssetType, bool Debug);
+
+	/**
+	 * The root path / maps to the content folder in the game.
+	 * This returns the root path for the content folder of the plugin with the given name.
+	 */
+	UFUNCTION(BlueprintCallable, Category= "MAssets|Methods")
+	static FString GetPluginAssetPath(FString PluginName);
 };
